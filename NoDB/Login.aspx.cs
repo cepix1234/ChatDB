@@ -18,7 +18,6 @@ namespace NoDB
         protected void LoginBtn_Click(object sender, EventArgs e)
         {
             int st=-1;
-
             String[] up_ime = new String[3];
             up_ime[0] = "63130246";
             up_ime[1] = "murkod";
@@ -39,9 +38,9 @@ namespace NoDB
             {
                 Response.BufferOutput = true;
                 //Za govor naprej poslji username ker je to glavni kljuc
-                Response.Redirect("http://localhost:15052/Chat.aspx?field1=" + st);
+                Response.Redirect("http://localhost:15052/Chat.aspx?field1=" + up_ime[st]);
             }
-
+           
         }
     }
 }

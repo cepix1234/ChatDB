@@ -38,6 +38,5 @@
             </td>
         </tr>
     </table>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:northwndConnectionString %>" SelectCommand="SELECT DISTINCT [CategoryName] FROM [Alphabetical list of products]"></asp:SqlDataSource>
     </form>
 </body></html>

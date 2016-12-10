@@ -45,7 +45,7 @@
     </table>
 
 
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PovezavaPogovor %>" SelectCommand="SELECT [besedilo], [username] FROM [Pogovor]"></asp:SqlDataSource>
 
 
     </form>
