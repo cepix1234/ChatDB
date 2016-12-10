@@ -15,11 +15,8 @@ namespace NoDB
         public static String[] naziv = new String[3];
         protected void Page_Load(object sender, EventArgs e)
         {
-            naziv[0] = "Tjaž Špegel";
-            naziv[1] = "Murko Damjanovič";
-            naziv[2] = "Slavoj Žužek";
-            String s = Request.QueryString["field1"];
-
+            //String s = Request.QueryString["field1"];
+            String s = "blaz";
             if (s == null)
             {
                 Response.BufferOutput = true;

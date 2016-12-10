@@ -38,6 +38,7 @@ namespace NoDB
             if(pass[st] == Password.Text)
             {
                 Response.BufferOutput = true;
+                //Za govor naprej poslji username ker je to glavni kljuc
                 Response.Redirect("http://localhost:15052/Chat.aspx?field1=" + st);
             }
 
