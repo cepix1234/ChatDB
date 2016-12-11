@@ -12,4 +12,8 @@ Blaž Ocepek: Jaz sem sprogramiral Chat stran, ter postavil Github.
 
 Tjaž Špegel: Jaz sem postavil bazo, ter sprogramiral Log in stran
 
-//vnesi 2 uporabnika v bazo s katerima se lahko prijavimo
+Username: up
+Password: AA11!bbb
+
+Username: test
+Password: AA11!bbb
