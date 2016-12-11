@@ -8,9 +8,9 @@ Pri izdlavi registracije in prijave mi je največ problemov delalo samo branje i
 Delovanje strani Chat je podprto s SqlDataSource preko katerega pridobimo celoten pogovor ter ga shranjujemo v bazo.
 Imel sem kar precej težav s pridobivanjem podatkov najprej, po kratkem brskanju po internetu sem našel rešitev, enke težave sem imel pri shranjevaju.
 
-Blaž Ocepek: Jaz sem sprogramiral Chat stran, ter postavil Github.
+Blaž Ocepek: Jast sem sprogramiral Chat stran, ter postavil Github.
 
-Tjaž Špegel: Jaz sem postavil bazo, ter sprogramiral Log in stran
+Tjaž Špegel: Jast sem postavil bazo, ter sprogramiral Log in stran
 
 Username: up
 Password: AA11!bbb
