@@ -12,8 +12,10 @@ Blaž Ocepek: Jast sem sprogramiral Chat stran, ter postavil Github.
 
 Tjaž Špegel: Jast sem postavil bazo, ter sprogramiral Log in stran
 
+UPORABNIK 1:
 Username: up
 Password: AA11!bbb
 
+UPORABNIK 2:
 Username: test
 Password: AA11!bbb
