@@ -78,3 +78,23 @@ C:\Users\Tjaž\Documents\Visual Studio 2015\Projects\ChatDB-master\NoDB\bin\Micr
 C:\Users\Tjaž\Documents\Visual Studio 2015\Projects\ChatDB-master\NoDB\obj\Debug\NoDB.csprojResolveAssemblyReference.cache
 C:\Users\Tjaž\Documents\Visual Studio 2015\Projects\ChatDB-master\NoDB\obj\Debug\NoDB.dll
 C:\Users\Tjaž\Documents\Visual Studio 2015\Projects\ChatDB-master\NoDB\obj\Debug\NoDB.pdb
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\csc.exe
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\System.Collections.Immutable.dll
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\System.Reflection.Metadata.dll
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\vbc.exe
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\VBCSCompiler.exe
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\roslyn\VBCSCompiler.exe.config
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\NoDB.dll.config
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\NoDB.dll
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\NoDB.pdb
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\School\IS\Seminarska3\ChatDB\NoDB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\School\IS\Seminarska3\ChatDB\NoDB\obj\Debug\NoDB.csprojResolveAssemblyReference.cache
+D:\School\IS\Seminarska3\ChatDB\NoDB\obj\Debug\NoDB.dll
+D:\School\IS\Seminarska3\ChatDB\NoDB\obj\Debug\NoDB.pdb

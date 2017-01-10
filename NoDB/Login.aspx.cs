@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -99,10 +101,11 @@ namespace NoDB
             String[] s = Ime.Text.Split();
 
             SqlDataSource1.InsertCommandType = SqlDataSourceCommandType.Text;
-            SqlDataSource1.InsertCommand = "INSERT INTO [Uporabnik] ([username], [ime], [priimek], [geslo]) VALUES (@username, @ime, @priimek, @geslo)";
+            SqlDataSource1.InsertCommand = "INSERT INTO [Uporabnik] ([username], [ime], [priimek], [geslo], [stSporocil]) VALUES (@username, @ime, @priimek, @geslo, @stSporocil)";
             SqlDataSource1.InsertParameters.Add("username", up_ime.Text);
             SqlDataSource1.InsertParameters.Add("ime", s[0]);
             SqlDataSource1.InsertParameters.Add("priimek", s[1]);
+            SqlDataSource1.InsertParameters.Add("stSporocil", "0");
             if (g1.Text.Length > 8 && numm(g1.Text) >= 2 && vlka(g1.Text) >= 2 && znaki(g1.Text) >= 1)
             {
                 if (g1.Text != g2.Text)
@@ -111,7 +114,8 @@ namespace NoDB
                 }
                 else
                 {
-                    SqlDataSource1.InsertParameters.Add("geslo", g2.Text);
+                    string gesloHashed = MD5Hash(g2.Text);
+                    SqlDataSource1.InsertParameters.Add("geslo", gesloHashed);
                     SqlDataSource1.Insert();
                     Label1.Text = "Vaš uporabniški račun je bil uspešno ustvarjen!";
                     Ime.Text = "";
@@ -125,5 +129,30 @@ namespace NoDB
                 Label1.Text = "Geslo ni pravilno napisano.";
             }
         }
+
+        public string MD5Hash(string input)
+
+        {
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+
+            byte[] hash = md5.ComputeHash(inputBytes);
+
+
+            System.Text.StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < hash.Length; i++)
+
+            {
+
+                sb.Append(hash[i].ToString("X2"));
+
+            }
+
+            return sb.ToString();
+
+        }
+
     }
 }
