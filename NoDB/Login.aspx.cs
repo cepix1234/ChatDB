@@ -31,13 +31,12 @@ namespace NoDB
                 {
                     up_ime = dt.Rows[i]["username"].ToString();
                     pass = dt.Rows[i]["geslo"].ToString();
-                    Username.Text = pass;
                     break;
                 }
             }
 
 
-            if(pass == Password.Text)
+            if(pass == MD5Hash(Password.Text))
             {
                 Response.BufferOutput = true;
                 //Za govor naprej poslji username ker je to glavni kljuc
@@ -93,41 +92,41 @@ namespace NoDB
 
             const int MIN_LEN = 8;
 
-            if(g1.Text.Length>8 && numm(g1.Text) >= 2 && vlka(g1.Text) >= 2 && znaki(g1.Text) >=1)
-            {
-
-            }
-
             String[] s = Ime.Text.Split();
 
-            SqlDataSource1.InsertCommandType = SqlDataSourceCommandType.Text;
-            SqlDataSource1.InsertCommand = "INSERT INTO [Uporabnik] ([username], [ime], [priimek], [geslo], [stSporocil]) VALUES (@username, @ime, @priimek, @geslo, @stSporocil)";
-            SqlDataSource1.InsertParameters.Add("username", up_ime.Text);
-            SqlDataSource1.InsertParameters.Add("ime", s[0]);
-            SqlDataSource1.InsertParameters.Add("priimek", s[1]);
-            SqlDataSource1.InsertParameters.Add("stSporocil", "0");
-            if (g1.Text.Length > 8 && numm(g1.Text) >= 2 && vlka(g1.Text) >= 2 && znaki(g1.Text) >= 1)
+            if(up_ime.Text.Length > 0 && s[0] != null && s[0].Length >0 && s[1] != null && s[1].Length >0 && g1.Text.Length > 0 && g2.Text.Length > 0)
             {
-                if (g1.Text != g2.Text)
+                SqlDataSource1.InsertCommandType = SqlDataSourceCommandType.Text;
+                SqlDataSource1.InsertCommand = "INSERT INTO [Uporabnik] ([username], [ime], [priimek], [geslo], [stSporocil], [admin]) VALUES (@username, @ime, @priimek, @geslo, @stSporocil, @admin)";
+                SqlDataSource1.InsertParameters.Add("username", up_ime.Text);
+                SqlDataSource1.InsertParameters.Add("ime", s[0]);
+                SqlDataSource1.InsertParameters.Add("priimek", s[1]);
+                SqlDataSource1.InsertParameters.Add("stSporocil", "0");
+                SqlDataSource1.InsertParameters.Add("admin", "0");
+                if (g1.Text.Length > 8 && numm(g1.Text) >= 2 && vlka(g1.Text) >= 2 && znaki(g1.Text) >= 1)
                 {
-                    Label1.Text = "Gesli se ne ujemata!";
+                    if (g1.Text != g2.Text)
+                    {
+                        Label1.Text = "Gesli se ne ujemata!";
+                    }
+                    else
+                    {
+                        string gesloHashed = MD5Hash(g2.Text);
+                        SqlDataSource1.InsertParameters.Add("geslo", gesloHashed);
+                        SqlDataSource1.Insert();
+                        Label1.Text = "Vaš uporabniški račun je bil uspešno ustvarjen!";
+                        Ime.Text = "";
+                        up_ime.Text = "";
+                        g1.Text = "";
+                        g2.Text = "";
+                    }
                 }
                 else
                 {
-                    string gesloHashed = MD5Hash(g2.Text);
-                    SqlDataSource1.InsertParameters.Add("geslo", gesloHashed);
-                    SqlDataSource1.Insert();
-                    Label1.Text = "Vaš uporabniški račun je bil uspešno ustvarjen!";
-                    Ime.Text = "";
-                    up_ime.Text = "";
-                    g1.Text = "";
-                    g2.Text = "";
+                    Label1.Text = "Geslo ni pravilno napisano.";
                 }
             }
-            else
-            {
-                Label1.Text = "Geslo ni pravilno napisano.";
-            }
+           
         }
 
         public string MD5Hash(string input)

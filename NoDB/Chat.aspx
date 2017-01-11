@@ -45,7 +45,10 @@
     </table>
 
 
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PovezavaPogovor %>" SelectCommand="SELECT [besedilo], [username] FROM [Pogovor]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ServiceChatBDConnectionString %>" SelectCommand="SELECT [besedilo], [username], [casSporocila] FROM [Pogovor]"></asp:SqlDataSource>
+
+
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ServiceChatBDConnectionString %>" SelectCommand="SELECT [stSporocil], [username] FROM [Uporabnik]"></asp:SqlDataSource>
 
 
     </form>
