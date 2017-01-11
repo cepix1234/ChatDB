@@ -40,7 +40,7 @@ namespace NoDB
             {
                 Response.BufferOutput = true;
                 //Za govor naprej poslji username ker je to glavni kljuc
-                Response.Redirect("http://localhost:15052/Chat.aspx?field1=" + up_ime);
+                Response.Redirect("http://servicechatbt.azurewebsites.net/Chat.aspx?field1=" + up_ime);
             }else
             {
                 Label2.Text = "Geslo ali uporabniško ime ni pravilno!";

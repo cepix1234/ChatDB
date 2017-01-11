@@ -23,7 +23,7 @@ namespace NoDB
             if (s == null)
             {
                 Response.BufferOutput = true;
-                Response.Redirect("http://localhost:15052/Login.aspx");
+                Response.Redirect("http://servicechatbt.azurewebsites.net/Login.aspx");
             }
 
             if (!pr2.Contains(s))
@@ -117,7 +117,7 @@ namespace NoDB
             String s = Request.QueryString["field1"];
             pr2.Remove(s);
             Response.BufferOutput = true;
-            Response.Redirect("http://localhost:15052/Login.aspx");
+            Response.Redirect("http://servicechatbt.azurewebsites.net/Login.aspx");
         }
     }
 }

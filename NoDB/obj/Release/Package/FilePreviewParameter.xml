@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="ServiceChatBT" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\School\\IS\\Seminarska3\\ChatDB\\NoDB\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\School\\IS\\Seminarska3\\ChatDB\\NoDB\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="ServiceChatBT/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\School\\IS\\Seminarska3\\ChatDB\\NoDB\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="ConnectionString-Web.config Connection String" description="" value="Data Source=tcp:servicechats.database.windows.net,1433;Initial Catalog=ServiceChatBD;User ID=cepix1234@servicechats;Password=aWr4GnuLd_1" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\School\\IS\\Seminarska3\\ChatDB\\NoDB\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="PovezavaPogovor-Web.config Connection String" description="" value="Data Source=tcp:servicechats.database.windows.net,1433;Initial Catalog=ServiceChatBD;User ID=cepix1234@servicechats;Password=aWr4GnuLd_1" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\School\\IS\\Seminarska3\\ChatDB\\NoDB\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PovezavaPogovor']/@connectionString" />
+  </parameter>
+  <parameter name="ServiceChatBDConnectionString-Web.config Connection String" description="" value="Data Source=tcp:servicechats.database.windows.net,1433;Initial Catalog=ServiceChatBD;User ID=cepix1234@servicechats;Password=aWr4GnuLd_1" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\School\\IS\\Seminarska3\\ChatDB\\NoDB\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ServiceChatBDConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
