@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
         .auto-style3 {
-            width: 177px;
+            width: 197px;
         }
     </style>
 </head>
@@ -24,12 +24,18 @@
 
         <table style="width:50%" align="left">
             <tr>
-                <td class="auto-style3"><h1>Registracija</h1></td>
+                <td colspan ="2" class="auto-style3"><h1>Registracija</h1></td>
             </tr>
+            <tr> 
+                <td colspan="2">   
+                        <asp:Label ID="Label3" runat="server" Text="Geslo mora biti dolgo vsaj 8 znakov ter vsebovati vsaj 2 velike črke, 2 znaka in 2 številke!"></asp:Label>
+                </td>
+            </tr>
+            <tr><td><p></p></td></tr>
             <tr>
-                <td class="auto-style3">Ime: </td>
+                <td class="auto-style3">Ime Priimek: </td>
                 <td>
-                    <asp:TextBox ID="Ime" runat="server" style="margin-left: 6px" Width="149px"></asp:TextBox>
+                    <asp:TextBox ID="Ime" runat="server" style="margin-left: 6px" Width="171px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -85,7 +91,7 @@
                 <asp:Label ID="Label2" runat="server"></asp:Label>
                 <br />
                 <asp:Button ID="LoginBtn" runat="server" OnClick="LoginBtn_Click" Text="Prijava" Width="166px" />
-                <asp:Button ID="LoginBtnAdmin" runat="server" OnClick="LoginBtnAdmin_Click" Text="Prijava Z adminom" Width="166px" />
+                <asp:Button ID="LoginBtnAdmin" runat="server" OnClick="LoginBtnAdmin_Click" Text="Prijava v admin konzolo" Width="166px" />
                 <br />
             </td>
         </tr>

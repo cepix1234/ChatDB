@@ -12,7 +12,7 @@ namespace NoDB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            pobrisiTB();
 
         }
 
@@ -41,11 +41,11 @@ namespace NoDB
                 Response.BufferOutput = true;
                 //Za govor naprej poslji username ker je to glavni kljuc
                 Response.Redirect("http://servicechatbt.azurewebsites.net/Chat.aspx?field1=" + up_ime);
-            }else
+            }
+            else
             {
                 Label2.Text = "Geslo ali uporabniško ime ni pravilno!";
             }
-           
         }
         int numm(String x)
         {
@@ -115,10 +115,6 @@ namespace NoDB
                         SqlDataSource1.InsertParameters.Add("geslo", gesloHashed);
                         SqlDataSource1.Insert();
                         Label1.Text = "Vaš uporabniški račun je bil uspešno ustvarjen!";
-                        Ime.Text = "";
-                        up_ime.Text = "";
-                        g1.Text = "";
-                        g2.Text = "";
                     }
                 }
                 else
@@ -126,7 +122,7 @@ namespace NoDB
                     Label1.Text = "Geslo ni pravilno napisano.";
                 }
             }
-           
+            pobrisiTB();
         }
 
         public string MD5Hash(string input)
@@ -151,6 +147,16 @@ namespace NoDB
 
             return sb.ToString();
 
+        }
+
+        public void pobrisiTB()
+        {
+            Ime.Text = "";
+            up_ime.Text = "";
+            g1.Text = "";
+            g2.Text = "";
+            Username.Text = "";
+            Password.Text = "";
         }
 
         protected void LoginBtnAdmin_Click(object sender, EventArgs e)

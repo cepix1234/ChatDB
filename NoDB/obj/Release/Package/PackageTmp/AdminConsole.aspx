@@ -43,7 +43,7 @@
                 </td>
                 <td>
                     <asp:Label ID="IzbraniUporabnikL" runat="server" Text="IzbraniUporabnik"></asp:Label>
-&nbsp;:<br />
+                    &nbsp;<br />
                     <asp:Button ID="IzbrisUporabnikaB" runat="server" OnClick="IzbrisUporabnikaB_Click" Text="Izbriši Uporabnika" />
                     <br />
                     <br />

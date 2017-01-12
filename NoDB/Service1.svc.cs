@@ -70,7 +70,7 @@ namespace NoDB
                     {
                         if (MD5Hash(password).Equals(reader.GetString(reader.GetOrdinal("geslo"))))
                         {
-                            stSporocilUporabnika = Convert.ToInt32(reader.GetString(reader.GetOrdinal("stSporocil")));
+                            stSporocilUporabnika = reader.GetInt32(reader.GetOrdinal("stSporocil"));
                         }
                     }
                 }

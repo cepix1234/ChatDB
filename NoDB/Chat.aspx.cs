@@ -47,50 +47,53 @@ namespace NoDB
 
         protected void Send_Click(object sender, EventArgs e)
         {
-            String s = Request.QueryString["field1"];
-            Label1.Text = s;
-            //dodajanje novega besedila v bazo
-            DateTime localTime = DateTime.Now;
-            var kultura = new CultureInfo("sl-SI");
-            string cas = localTime.ToString(kultura);
-            string[] dateTIme = cas.Split();
-            dateTIme[0] = dateTIme[0].Remove(dateTIme[0].Length - 1);
-            dateTIme[1] = dateTIme[1].Remove(dateTIme[1].Length - 1);
-            SqlDataSource1.InsertCommandType = SqlDataSourceCommandType.Text;
-            SqlDataSource1.InsertCommand = "INSERT INTO [Pogovor] ([username], [besedilo], [casSporocila]) VALUES (@username, @besedilo, @casSporocila)";
-            SqlDataSource1.InsertParameters.Add("username", s);
-            SqlDataSource1.InsertParameters.Add("besedilo", Message.Text);
-            SqlDataSource1.InsertParameters.Add("casSporocila", dateTIme[2]+"-"+dateTIme[1]+"-"+dateTIme[0]+" "+dateTIme[3]);
-            SqlDataSource1.Insert();
-            var dv = SqlDataSource1.Select(DataSourceSelectArguments.Empty) as DataView;
-            var dt = dv.ToTable();
-            Messages.Text = "";
-            for (int i = 0; i < dt.Rows.Count; i++)
+            if(Message.Text.Trim().Length > 0 )
             {
-                Messages.Text += dt.Rows[i]["casSporocila"].ToString()+": "+ dt.Rows[i]["username"].ToString() + ": " + dt.Rows[i]["besedilo"].ToString() + "\n";
-            }
-
-            var du = SqlDataSource2.Select(DataSourceSelectArguments.Empty) as DataView;
-            var dz = du.ToTable();
-            int indexUporabnika = 0;
-            for (int i = 0; i < dz.Rows.Count; i++)
-            {
-                if(dz.Rows[i]["username"].ToString().Equals(s))
+                String s = Request.QueryString["field1"];
+                Label1.Text = s;
+                //dodajanje novega besedila v bazo
+                DateTime localTime = DateTime.Now;
+                var kultura = new CultureInfo("sl-SI");
+                string cas = localTime.ToString(kultura);
+                string[] dateTIme = cas.Split();
+                dateTIme[0] = dateTIme[0].Remove(dateTIme[0].Length - 1);
+                dateTIme[1] = dateTIme[1].Remove(dateTIme[1].Length - 1);
+                SqlDataSource1.InsertCommandType = SqlDataSourceCommandType.Text;
+                SqlDataSource1.InsertCommand = "INSERT INTO [Pogovor] ([username], [besedilo], [casSporocila]) VALUES (@username, @besedilo, @casSporocila)";
+                SqlDataSource1.InsertParameters.Add("username", s);
+                SqlDataSource1.InsertParameters.Add("besedilo", Message.Text);
+                SqlDataSource1.InsertParameters.Add("casSporocila", dateTIme[2] + "-" + dateTIme[1] + "-" + dateTIme[0] + " " + dateTIme[3]);
+                SqlDataSource1.Insert();
+                var dv = SqlDataSource1.Select(DataSourceSelectArguments.Empty) as DataView;
+                var dt = dv.ToTable();
+                Messages.Text = "";
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    indexUporabnika = i;
+                    Messages.Text += dt.Rows[i]["casSporocila"].ToString() + ": " + dt.Rows[i]["username"].ToString() + ": " + dt.Rows[i]["besedilo"].ToString() + "\n";
                 }
-            }
-            SqlDataSource2.UpdateCommandType = SqlDataSourceCommandType.Text;
-            SqlDataSource2.UpdateCommand = "UPDATE [Uporabnik] SET [stSporocil] = @stSporocil WHERE [username] = @username";;
-            SqlDataSource2.UpdateParameters.Add("stSporocil", (Convert.ToInt16(dz.Rows[indexUporabnika]["stSporocil"].ToString()) + 1).ToString());
-            SqlDataSource2.UpdateParameters.Add("username", s);
-            SqlDataSource2.Update();
-            Users.Text = "";
-            foreach (String x in pr2)
-            {
-                Users.Text += x + "\n";
-            }
-            Message.Text = "";
+
+                var du = SqlDataSource2.Select(DataSourceSelectArguments.Empty) as DataView;
+                var dz = du.ToTable();
+                int indexUporabnika = 0;
+                for (int i = 0; i < dz.Rows.Count; i++)
+                {
+                    if (dz.Rows[i]["username"].ToString().Equals(s))
+                    {
+                        indexUporabnika = i;
+                    }
+                }
+                SqlDataSource2.UpdateCommandType = SqlDataSourceCommandType.Text;
+                SqlDataSource2.UpdateCommand = "UPDATE [Uporabnik] SET [stSporocil] = @stSporocil WHERE [username] = @username"; ;
+                SqlDataSource2.UpdateParameters.Add("stSporocil", (Convert.ToInt16(dz.Rows[indexUporabnika]["stSporocil"].ToString()) + 1).ToString());
+                SqlDataSource2.UpdateParameters.Add("username", s);
+                SqlDataSource2.Update();
+                Users.Text = "";
+                foreach (String x in pr2)
+                {
+                    Users.Text += x + "\n";
+                }
+                Message.Text = "";
+            }            
         }
 
         protected void Refresh_Click(object sender, EventArgs e)

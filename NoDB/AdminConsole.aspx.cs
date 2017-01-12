@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -21,6 +22,9 @@ namespace NoDB
                 Response.BufferOutput = true;
                 Response.Redirect("http://servicechatbt.azurewebsites.net/Login.aspx");
             }
+
+            refreshGW();
+            dissableAll();
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,6 +69,21 @@ namespace NoDB
                 SpremeniVAdminB.Enabled = !jeAdmin;
                 SpremenivNavadniB.Enabled = jeAdmin;
             }
+            IzbrisUporabnikaB.Enabled = true;
+        }
+
+        public void refreshGW()
+        {
+            SQLDSPridobitevUNameInStSporocil.DataBind();
+            GridView1.DataBind();
+        }
+
+        public void dissableAll()
+        {
+            IzbrisUporabnikaB.Enabled = false;
+            SpremeniVAdminB.Enabled = false;
+            SpremenivNavadniB.Enabled = false;
+            IzbraniUporabnikL.Text = "Trenutno izbrani uporabnik : ";
         }
 
         protected void IzbrisUporabnikaB_Click(object sender, EventArgs e)
@@ -85,6 +104,8 @@ namespace NoDB
             cmd.ExecuteNonQuery();
             cmdU.ExecuteNonQuery();
             conn.Close();
+            refreshGW();
+            dissableAll();
         }
 
         protected void SpremeniVAdminB_Click(object sender, EventArgs e)
@@ -101,6 +122,8 @@ namespace NoDB
             cmd.ExecuteNonQuery();
             conn.Close();
             izbira();
+            refreshGW();
+            dissableAll();
         }
 
         protected void SpremenivNavadniB_Click(object sender, EventArgs e)
@@ -117,11 +140,14 @@ namespace NoDB
             cmd.ExecuteNonQuery();
             conn.Close();
             izbira();
+            refreshGW();
+            dissableAll();
         }
 
         protected void OdjavaB_Click(object sender, EventArgs e)
         {
-
+            Response.BufferOutput = true;
+            Response.Redirect("http://servicechatbt.azurewebsites.net/Login.aspx");
         }
     }
 }
