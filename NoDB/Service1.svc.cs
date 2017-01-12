@@ -50,8 +50,7 @@ namespace NoDB
             var kultura = new CultureInfo("sl-SI");
             string cas = localTime.ToString(kultura);
             string[] dateTIme = cas.Split();
-            dateTIme[0] = dateTIme[0].Remove(dateTIme[0].Length - 1);
-            dateTIme[1] = dateTIme[1].Remove(dateTIme[1].Length - 1);
+            string[] datum = dateTIme[0].Split('.');
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source = servicechats.database.windows.net; Initial Catalog = ServiceChatBD; Persist Security Info = True; User ID = cepix1234; Password = aWr4GnuLd_1";
             int stSporocilUporabnika = 0;
@@ -82,7 +81,7 @@ namespace NoDB
             cmdI.CommandText = "INSERT INTO Pogovor (username, besedilo, casSporocila) VALUES (@username, @besedilo, @casSporocila)";
             cmdI.Parameters.AddWithValue("username", username);
             cmdI.Parameters.AddWithValue("besedilo", message);
-            cmdI.Parameters.AddWithValue("casSporocila", dateTIme[2] + "-" + dateTIme[1] + "-" + dateTIme[0] + " " + dateTIme[3]);
+            cmdI.Parameters.AddWithValue("casSporocila", datum[2] + "-" + datum[1] + "-" + datum[0] + " " + dateTIme[1]);
             cmdI.Connection = conn;
             SqlCommand cmdU = new SqlCommand();
             cmdU.CommandText = "UPDATE Uporabnik SET stSporocil= @stSporocil WHERE username = @username";
