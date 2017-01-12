@@ -54,16 +54,46 @@ namespace NoDB
             dateTIme[1] = dateTIme[1].Remove(dateTIme[1].Length - 1);
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source = servicechats.database.windows.net; Initial Catalog = ServiceChatBD; Persist Security Info = True; User ID = cepix1234; Password = aWr4GnuLd_1";
+            int stSporocilUporabnika = 0;
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+            cmd.CommandText = "SELECT * FROM Uporabnik";
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.Connection = conn;
+            conn.Open();
+            reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    if (username.Equals(reader.GetString(reader.GetOrdinal("username"))))
+                    {
+                        if (MD5Hash(password).Equals(reader.GetString(reader.GetOrdinal("geslo"))))
+                        {
+                            stSporocilUporabnika = Convert.ToInt32(reader.GetString(reader.GetOrdinal("stSporocil")));
+                        }
+                    }
+                }
+            }
+            reader.Close();
+            conn.Close();
+
             SqlCommand cmdI = new SqlCommand();
             cmdI.CommandText = "INSERT INTO Pogovor (username, besedilo, casSporocila) VALUES (@username, @besedilo, @casSporocila)";
             cmdI.Parameters.AddWithValue("username", username);
             cmdI.Parameters.AddWithValue("besedilo", message);
             cmdI.Parameters.AddWithValue("casSporocila", dateTIme[2] + "-" + dateTIme[1] + "-" + dateTIme[0] + " " + dateTIme[3]);
             cmdI.Connection = conn;
+            SqlCommand cmdU = new SqlCommand();
+            cmdU.CommandText = "UPDATE Uporabnik SET stSporocil= @stSporocil WHERE username = @username";
+            cmdU.Parameters.AddWithValue("stSporocil", (stSporocilUporabnika + 1).ToString());
+            cmdU.Parameters.AddWithValue("username", username);
+            cmdU.Connection = conn;
             conn.Open();
             if (Login(username, password))
             {
                 cmdI.ExecuteNonQuery();
+                cmdU.ExecuteNonQuery();
             }
             conn.Close();
         }

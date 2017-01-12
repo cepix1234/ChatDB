@@ -13,12 +13,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ServiceChatBDConnectionString %>" SelectCommand="SELECT [username], [geslo] FROM [Uporabnik]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ServiceChatBDConnectionString %>" SelectCommand="SELECT [username], [geslo], [admin] FROM [Uporabnik]"></asp:SqlDataSource>
     <br />
     <br />
     <br />
     <br />
-    <h1 align="center">ChatDB</h1>
+    <h1 align="center">ServiceChat</h1>
     <br />
     <br />
 
@@ -85,6 +85,7 @@
                 <asp:Label ID="Label2" runat="server"></asp:Label>
                 <br />
                 <asp:Button ID="LoginBtn" runat="server" OnClick="LoginBtn_Click" Text="Prijava" Width="166px" />
+                <asp:Button ID="LoginBtnAdmin" runat="server" OnClick="LoginBtnAdmin_Click" Text="Prijava Z adminom" Width="166px" />
                 <br />
             </td>
         </tr>

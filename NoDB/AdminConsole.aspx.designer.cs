@@ -10,7 +10,7 @@
 namespace NoDB {
     
     
-    public partial class Login {
+    public partial class AdminConsole {
         
         /// <summary>
         /// form1 control.
@@ -22,111 +22,75 @@ namespace NoDB {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// NaslovnicaL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label NaslovnicaL;
         
         /// <summary>
-        /// Ime control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Ime;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// up_ime control.
+        /// IzbraniUporabnikL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox up_ime;
+        protected global::System.Web.UI.WebControls.Label IzbraniUporabnikL;
         
         /// <summary>
-        /// g1 control.
+        /// IzbrisUporabnikaB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox g1;
+        protected global::System.Web.UI.WebControls.Button IzbrisUporabnikaB;
         
         /// <summary>
-        /// g2 control.
+        /// SpremeniVAdminB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox g2;
+        protected global::System.Web.UI.WebControls.Button SpremeniVAdminB;
         
         /// <summary>
-        /// Label1 control.
+        /// SpremenivNavadniB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Button SpremenivNavadniB;
         
         /// <summary>
-        /// Button1 control.
+        /// OdjavaB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button OdjavaB;
         
         /// <summary>
-        /// Username control.
+        /// SQLDSPridobitevUNameInStSporocil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Username;
-        
-        /// <summary>
-        /// Password control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// LoginBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoginBtn;
-        
-        /// <summary>
-        /// LoginBtnAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoginBtnAdmin;
+        protected global::System.Web.UI.WebControls.SqlDataSource SQLDSPridobitevUNameInStSporocil;
     }
 }

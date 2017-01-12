@@ -153,5 +153,40 @@ namespace NoDB
 
         }
 
+        protected void LoginBtnAdmin_Click(object sender, EventArgs e)
+        {
+            String up_ime = "";
+            String pass = "";
+            Boolean admini = false;
+            var dv = SqlDataSource1.Select(DataSourceSelectArguments.Empty) as DataView;
+            var dt = dv.ToTable();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                //dt.Rows pridobim vse vrstice iz tabele [0] je prva vrstica [username] je kateri stolpec
+                up_ime = dt.Rows[i]["username"].ToString();
+                if (up_ime == Username.Text)
+                {
+                    up_ime = dt.Rows[i]["username"].ToString();
+                    pass = dt.Rows[i]["geslo"].ToString();
+                    admini = Convert.ToBoolean(dt.Rows[i]["admin"].ToString());
+                    break;
+                }
+            }
+
+
+            if (pass == MD5Hash(Password.Text))
+            {
+                if(admini)
+                {
+                    Response.BufferOutput = true;
+                    //Za govor naprej poslji username ker je to glavni kljuc
+                    Response.Redirect("http://servicechatbt.azurewebsites.net/AdminConsole.aspx?field1="+up_ime);
+                }
+            }
+            else
+            {
+                Label2.Text = "Geslo ali uporabniško ime ni pravilno!";
+            }
+        }
     }
 }
