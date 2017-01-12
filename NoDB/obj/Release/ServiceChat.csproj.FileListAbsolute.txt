@@ -17,3 +17,4 @@ D:\School\IS\Seminarska3\ChatDB\NoDB\bin\Microsoft.CodeDom.Providers.DotNetCompi
 D:\School\IS\Seminarska3\ChatDB\NoDB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\School\IS\Seminarska3\ChatDB\NoDB\obj\Release\NoDB.dll
 D:\School\IS\Seminarska3\ChatDB\NoDB\obj\Release\NoDB.pdb
+D:\School\IS\Seminarska3\ChatDB\NoDB\obj\Release\ServiceChat.csprojResolveAssemblyReference.cache

@@ -115,10 +115,7 @@ namespace NoDB
                 {
                     while (reader.Read())
                     {
-                        if (username.Equals(reader.GetString(reader.GetOrdinal("username"))))
-                        {
-                            sporocila.Add(reader.GetDateTime(reader.GetOrdinal("casSporocila")).ToString()+": " +reader.GetString(reader.GetOrdinal("besedilo")));
-                        }
+                        sporocila.Add(reader.GetDateTime(reader.GetOrdinal("casSporocila")).ToString()+": " +reader.GetString(reader.GetOrdinal("besedilo")));
                     }
                 }
             }
@@ -145,12 +142,9 @@ namespace NoDB
                 {
                     while (reader.Read())
                     {
-                        if (username.Equals(reader.GetString(reader.GetOrdinal("username"))))
+                        if(reader.GetInt32(reader.GetOrdinal("Id")) > Convert.ToInt32(id))
                         {
-                            if(reader.GetInt32(reader.GetOrdinal("Id")) > Convert.ToInt32(id))
-                            {
-                                sporocila.Add(reader.GetDateTime(reader.GetOrdinal("casSporocila")).ToString() + ": " + reader.GetString(reader.GetOrdinal("besedilo")));
-                            }
+                            sporocila.Add(reader.GetDateTime(reader.GetOrdinal("casSporocila")).ToString() + ": " + reader.GetString(reader.GetOrdinal("besedilo")));
                         }
                     }
                 }
