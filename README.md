@@ -36,7 +36,7 @@ pomen stolpca v vsaki tabeli:
    *besedilo: kaj je oseba napisala  
    *casSporocila: kdaj je oseba to sporočilo napisala  
 
-![Alt text](http://C:/Users/Tjaž/Documents/GitHub/login.jpg)
+![Alt text](https://postimg.org/image/8u7plym6x/)
 
 Večji težav pr izdelavi Android aplikacije nisem imel, saj sem pri predmetu Elektronsko in mobilno poslovanje izdelal še malce bolj kompleksno aplikacijo, kot je bila ta. Največ problemov sem imel z urejanje izpisa in samim pošiljanjem novih sporočil.
 
@@ -46,7 +46,8 @@ Ob uspešni prijavi se uporabniki izpišejo vsa stara spročila. Vsa sporočila 
 
 Zadnja stvari, ki sem jo omogočil je pošiljanje sporočil. Tukaj sem imel največ težav, saj sva service za dodajanje teksta naredila tako, da se text pošilja preko URL-ja in to mi preko POST metode ni uspelo narediti. Dobil sem error 405, ki ga nisem znal odpraviti, zato sem spremenil taktiko in uporabil WebView. WebView sem skril v ozadnje tako, da je uporabniki neviden in se samo poveže na zahtevano stran. Tako se doda novo sporočilo.
 
-// SLIKA
+![Alt text](https://postimg.org/image/ai6bcm6b5/)
+
   
 Blaž Ocepek: Jaz sem sprogramiral Spletno stran, service in Administracijsko konzolo
 
