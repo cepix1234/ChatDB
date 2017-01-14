@@ -1,4 +1,4 @@
-﻿# Service Chat
+# Service Chat
 Blaž Ocepek 63140179 
 
 Tjaž Špegel 63130246
@@ -32,7 +32,7 @@ pomen stolpca v vsaki tabeli:
   *besedilo: kaj je oseba napisala
   *casSporocila: kdaj je oseba to sporočilo napisala
   
-
+// SLIKA
 
 Večji težav pr izdelavi Android aplikacije nisem imel, saj sem pri predmetu Elektronsko in mobilno poslovanje izdelal še malce bolj kompleksno aplikacijo, kot je bila ta. Največ problemov sem imel z urejanje izpisa in samim pošiljanjem novih sporočil.
 
@@ -42,7 +42,7 @@ Ob uspešni prijavi se uporabniki izpišejo vsa stara spročila. Vsa sporočila 
 
 Zadnja stvari, ki sem jo omogočil je pošiljanje sporočil. Tukaj sem imel največ težav, saj sva service za dodajanje teksta naredila tako, da se text pošilja preko URL-ja in to mi preko POST metode ni uspelo narediti. Dobil sem error 405, ki ga nisem znal odpraviti, zato sem spremenil taktiko in uporabil WebView. WebView sem skril v ozadnje tako, da je uporabniki neviden in se samo poveže na zahtevano stran. Tako se doda novo sporočilo. 
 
-
+// SLIKA 
   
 Blaž Ocepek: Jaz sem sprogramiral Spletno stran, service in Administracijsko konzolo
 
