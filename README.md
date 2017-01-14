@@ -36,7 +36,7 @@ pomen stolpca v vsaki tabeli:
    *besedilo: kaj je oseba napisala  
    *casSporocila: kdaj je oseba to sporočilo napisala  
 
-![Alt text](http://Users/Tjaž/Documents/GitHub/login.jpg)
+![Alt text](http://C:/Users/Tjaž/Documents/GitHub/login.jpg)
 
 Večji težav pr izdelavi Android aplikacije nisem imel, saj sem pri predmetu Elektronsko in mobilno poslovanje izdelal še malce bolj kompleksno aplikacijo, kot je bila ta. Največ problemov sem imel z urejanje izpisa in samim pošiljanjem novih sporočil.
 
