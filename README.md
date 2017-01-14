@@ -21,18 +21,19 @@ Prikaz obeh tabel baze levo Uporabniki in desno Pogovor.
 pomen stolpca v vsaki tabeli:
 
   Uporabnik:
-    *username: uporabniško ime uporabnika
-    *ime: ime uporabnika
-    *priimek: priimek uporabnika
-    *geslo: hashed geslo ki ga je nastavil uporabnik
-    *stSporocil: število sporočil, ki jih je uporabnik napisal
-    *admin: ali ima uporabnik administratorske pravice
+  
+    *username: uporabniško ime uporabnika 
+    *ime: ime uporabnika 
+    *priimek: priimek uporabnika 
+    *geslo: hashed geslo ki ga je nastavil uporabnik 
+    *stSporocil: število sporočil, ki jih je uporabnik napisal 
+    *admin: ali ima uporabnik administratorske pravice 
     
   Pogovor:
-  *id: zaporedna številka sporočila
-  *username: uporabniško ime uoporabnika, ki je povezan s tabelo Uporabnik, s tem vemo kdo je napisal sporočilo
-  *besedilo: kaj je oseba napisala
-  *casSporocila: kdaj je oseba to sporočilo napisala
+  *id: zaporedna številka sporočila 
+  *username: uporabniško ime uoporabnika, ki je povezan s tabelo Uporabnik, s tem vemo kdo je napisal sporočilo 
+  *besedilo: kaj je oseba napisala 
+  *casSporocila: kdaj je oseba to sporočilo napisala 
   
 
 // SLIKA
