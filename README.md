@@ -6,7 +6,6 @@ Tjaž Špegel 63130246
 
 ![Alt text](http://image.prntscr.com/image/0367e45c20544857a80d9a74da5f3a00.png)
 Prikaz administratorskega vmesnika
-![Alt text]()
 
 Pri posedobovanju strani za azure ni bilo veliko težav, ker sem delal isto kot pri prejšnji nalogi.
 Največja težava je bila pri datomu in času, ko sem ga moral preoblikovati da je v pravilnem formatu za SQl bazo, tukaj je nastopila težava ker je stran preko spleta dobila drugačen format časa in sem dobival napako "index aout of bounds". Po ugotovotvi izvora napake te ni bilo teško odpraviti.
