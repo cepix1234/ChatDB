@@ -22,12 +22,12 @@ pomen stolpca v vsaki tabeli:
 
   Uporabnik:
   
-   *username: uporabniško ime uporabnika 
-   *ime: ime uporabnika 
-   *priimek: priimek uporabnika 
-   *geslo: hashed geslo ki ga je nastavil uporabnik 
-   *stSporocil: število sporočil, ki jih je uporabnik napisal 
-   *admin: ali ima uporabnik administratorske pravice 
+    *username: uporabniško ime uporabnika 
+    *ime: ime uporabnika 
+    *priimek: priimek uporabnika 
+    *geslo: hashed geslo ki ga je nastavil uporabnik 
+    *stSporocil: število sporočil, ki jih je uporabnik napisal 
+    *admin: ali ima uporabnik administratorske pravice 
     
   Pogovor:
   
