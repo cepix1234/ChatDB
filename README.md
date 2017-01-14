@@ -32,18 +32,6 @@ pomen stolpca v vsaki tabeli:
   *besedilo: kaj je oseba napisala
   *casSporocila: kdaj je oseba to sporočilo napisala
   
-// SLIKA
+Blaž Ocepek: Jast sem sprogramiral Spletno stran, service in Administracijsko konzolo
 
-Večji težav pr izdelavi Android aplikacije nisem imel, saj sem pri predmetu Elektronsko in mobilno poslovanje izdelal še malce bolj kompleksno aplikacijo, kot je bila ta. Največ problemov sem imel z urejanje izpisa in samim pošiljanjem novih sporočil.
-
-Najprej sem se lotil prijavne strani, ki je vidna na zgorni sliki. Iz dveh "TextFieldov" sem prebrav uporabniško ime in geslo, ki ga vnese uporabnik. Najprej sem preveril, da katero izmed polji ni prazno (če je katero izmed polji prazno se izpiše opozorilo), nato pa sem na Azure poslal zahtevo po servisu, ki vrne vrednost true če je uporabnik registriran in če je geslo pravilno ali false v nasprotnem primeru. To vrednost sem dobil v jason formatu, iz katerega sem nato dobil boolean vrednost. V primeru, da je bila vrednost true, se aktivira preusmeritev na "Chat" stran, kamor se tudi pošlje uporabniško ime in geslo (preko intenta), v nasprotnem primeru se izpiše obvestilo o napaki.
-
-Ob uspešni prijavi se uporabniki izpišejo vsa stara spročila. Vsa sporočila dobim tako, da na Azure pošljem zahtevo po vseh sporočilih, ki jih pridobim v jason formatu, iz katerega nato vrstico po vrstico izpišem na zaslon. V temu koraku je nastal prvi večji problem, saj je bilo v samem izpisu veliko nepotrebnih znakov, ki jih nisem znal zbrisati. Nakoncu sem uporabil File.separator, ki je zamenjal znak z "/". Nato sem odpravil še vse nepotrebne "/". Shranjeval sem tudi indeks zadnjega izpisanega sporočila, in tako sem omogočil, da se ob kliku na gumb "Osveži" dodajo samo nova sporočila.
-
-Zadnja stvari, ki sem jo omogočil je pošiljanje sporočil. Tukaj sem imel največ težav, saj sva service za dodajanje teksta naredila tako, da se text pošilja preko URL-ja in to mi preko POST metode ni uspelo narediti. Dobil sem error 405, ki ga nisem znal odpraviti, zato sem spremenil taktiko in uporabil WebView. WebView sem skril v ozadnje tako, da je uporabniki neviden in se samo poveže na zahtevano stran. Tako se doda novo sporočilo. 
-
-// SLIKA 
-  
-Blaž Ocepek: Jaz sem sprogramiral Spletno stran, service in Administracijsko konzolo
-
-Tjaž Špegel: Jaz sem postavil in posodobil bazo ter naredil Android chat aplikacijo.
+Tjaž Špegel: Jast sem postavil bazo, ter sprogramiral Log in stran
