@@ -31,11 +31,10 @@ pomen stolpca v vsaki tabeli:
     
   Pogovor:
   
-  *id: zaporedna številka sporočila 
-  *username: uporabniško ime uoporabnika, ki je povezan s tabelo Uporabnik, s tem vemo kdo je napisal sporočilo 
-  *besedilo: kaj je oseba napisala 
-  *casSporocila: kdaj je oseba to sporočilo napisala 
-  
+  *id: zaporedna številka sporočila  
+  *username: uporabniško ime uoporabnika, ki je povezan s tabelo Uporabnik, s tem vemo kdo je napisal sporočilo  
+  *besedilo: kaj je oseba napisala  
+  *casSporocila: kdaj je oseba to sporočilo napisala  
 
 // SLIKA
 
